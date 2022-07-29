@@ -1,0 +1,9 @@
+.header_box {
+  background-color: white;
+  border: 1px solid #ffd9da;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}

@@ -1,0 +1,39 @@
+.add_box {
+  background-color: #ffd9da;
+  border-radius: 12px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+  gap: 20px;
+}
+
+.input_group {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.add_label {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.add_input {
+  height: 40px;
+  width: 240px;
+  border: none;
+  border-radius: 12px;
+  padding: 0 12px;
+}
+
+.add_btn {
+  border: none;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #ea638c;
+  width: 140px;
+  color: #fff;
+  font-weight: bold;
+}
