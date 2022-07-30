@@ -1,9 +1,10 @@
-.list_box {
-  padding: 0 24px;
-}
-
-.list-wrapper {
+.todo_container {
   display: flex;
+  gap: 20px;
+  margin-top: 24px;
   flex-wrap: wrap;
-  gap: 12px;
+  min-height: 200px;
+}
+.list_container {
+  margin: auto 50px;
 }
