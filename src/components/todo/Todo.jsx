@@ -1,10 +1,22 @@
 import React from "react";
 import "./style.css";
+import styled from "styled-components";
+import { Navigate, useNavigate } from "react-router-dom";
 
 function Todo({ todoList, delTodo, checkDone }) {
+  const navigate = useNavigate();
   console.log(todoList);
   return (
     <div className="todo_box">
+      <Detaillink>
+        <div
+          onClick={() => {
+            navigate("/detail");
+          }}
+        >
+          상세보기
+        </div>
+      </Detaillink>
       <h2 className="todo_title">{todoList.title}</h2>
       <p>{todoList.body}</p>
       <div className="btn_set">
@@ -41,3 +53,8 @@ function Todo({ todoList, delTodo, checkDone }) {
 }
 
 export default Todo;
+
+const Detaillink = styled.div`
+  text-decoration: none;
+  cursor: pointer;
+`;
