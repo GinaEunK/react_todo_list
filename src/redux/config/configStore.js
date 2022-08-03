@@ -1,7 +1,10 @@
 import { createStore } from "redux";
 import { combineReducers } from "redux";
-//combineReducers = 리듀서를 묶어주는거
-const rootReducer = combineReducers({});
+import DetailTodo from "../modules/DetailTodo";
+
+const rootReducer = combineReducers({
+  DetailTodo: DetailTodo,
+});
 const store = createStore(rootReducer);
 
 export default store;

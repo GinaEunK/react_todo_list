@@ -1,31 +1,38 @@
 import React from "react";
 import { useState } from "react";
 import "./style.css";
+import { useDispatch } from "react-redux";
+import { addTodo } from "../../redux/modules/DetailTodo";
+import shortId from "shortid";
 
-function Form({ todoLists, setTodoLists }) {
-  const writeTodo = {
+const Form = () => {
+  const dispatch = useDispatch();
+  const shortid = shortId.generate();
+
+  const todo = {
     id: 0,
     title: "",
     body: "",
     isDone: false,
   };
 
-  const [todoList, setTodoList] = useState(writeTodo);
+  const [todoList, setTodoList] = useState(todo);
+
   const onChangeHandler = (event) => {
     const { name, value } = event.target;
-    setTodoList({ ...todoList, [name]: value, id: todoLists.length + 1 });
+    setTodoList({ ...todoList, [name]: value, id: shortid });
   };
-  console.log(setTodoList);
-  const onSubmitHandler = (event) => {
+
+  const writeTodo = (event) => {
     event.preventDefault();
-    setTodoLists([...todoLists, todoList]);
-    setTodoList(writeTodo);
+    dispatch(addTodo(todoList));
+    // setTodoList([...todoList, todo]);
   };
 
   console.log(todoList);
 
   return (
-    <form onSubmit={onSubmitHandler} className="add_box">
+    <form onSubmit={writeTodo} className="add_box">
       <div className="input_group">
         <label className="add_label">제목</label>
         <input
@@ -48,6 +55,6 @@ function Form({ todoLists, setTodoLists }) {
       <button className="add_btn">추가하기</button>
     </form>
   );
-}
+};
 
 export default Form;
