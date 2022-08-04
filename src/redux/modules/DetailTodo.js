@@ -57,19 +57,21 @@ function DetailTodo(state = initialState, action = {}) {
     // 리턴 안에는 하나 추가된 리스트가 들어가야한다 우리가 입력한 어떤 값을 추가한 배열을 넣어줘야하는데
     // {만들어준 inistalstate:[새로운게 추가된 배열]}
     // = {...state.d_list[...state.d_list,action.payload]}
-    // => ...state(모든데이터중에서)d_list를 [] 의 명령으로 데이터를 바꾸겠다
+    // => ...state(모든데이터중에서)d_list를 [] 데이터를 바꾸겠다
     // [...state.todolist(기본값유지해주고),action.payload(새 데이터 payload) 값을 가져오겠다 ]
 
     case "DELETETODO":
       return {
         ...state,
         d_list: state.d_list.filter((item) => item.id !== action.payload),
+        // filter() 조건에 대한 참인 값들을 다 반환
       };
 
     case "CHECKTODO":
       return {
         ...state,
         d_list: state.d_list.map((item) => {
+          //map() 내가 원하는 데이터만 가져오고 싶을때 사용
           if (item.id === action.payload) {
             return {
               ...item,

@@ -10,7 +10,7 @@ import { deleteTodo, checkTodo } from "../../redux/modules/DetailTodo";
 function List() {
   const todo_List = useSelector((state) => state.DetailTodo.d_list);
   //   state.DetailTodo.d_list
-  //=> state.config파일에서 지정한값 or export한 파일명=>buckt:bucket의 bucket.초기값)
+  //=> state.config파일에서 지정한값 or export한 파일명=>DetailTodo:DetailTodo의 DetailTodo.초기값)
   // console.log(todo_List);
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -42,7 +42,7 @@ function List() {
                       className="btn todo_del"
                       onClick={() => {
                         dispatch(deleteTodo(item.id));
-                        // dispatch(액션크리에이터(객체))
+                        // dispatch(액션크리에이터(가져오고싶은데이터))
                       }}
                     >
                       삭제하기
