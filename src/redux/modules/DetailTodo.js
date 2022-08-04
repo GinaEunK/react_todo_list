@@ -56,6 +56,9 @@ function DetailTodo(state = initialState, action = {}) {
     //2. return 해주는 값이 새로운 state가 된다
     // 리턴 안에는 하나 추가된 리스트가 들어가야한다 우리가 입력한 어떤 값을 추가한 배열을 넣어줘야하는데
     // {만들어준 inistalstate:[새로운게 추가된 배열]}
+    // = {...state.d_list[...state.d_list,action.payload]}
+    // => ...state(모든데이터중에서)d_list를 [] 의 명령으로 데이터를 바꾸겠다
+    // [...state.todolist(기본값유지해주고),action.payload(새 데이터 payload) 값을 가져오겠다 ]
 
     case "DELETETODO":
       return {

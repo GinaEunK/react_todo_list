@@ -17,6 +17,8 @@ const Form = () => {
   };
 
   const [todoList, setTodoList] = useState(todo);
+  // console.log(todo);
+  // => 빈배열 12-16번째줄 들어옴
 
   const onChangeHandler = (event) => {
     const { name, value } = event.target;
@@ -29,7 +31,8 @@ const Form = () => {
     // setTodoList([...todoList, todo]);
   };
 
-  console.log(todoList);
+  // console.log(todoList);
+  // 빈배열 들어옴
 
   return (
     <form onSubmit={writeTodo} className="add_box">
