@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import "./style.css";
 import { useDispatch } from "react-redux";
-import { addTodo } from "../../redux/modules/DetailTodo";
+import { addTodo } from "../../redux/modules/ToolKit";
 import shortId from "shortid";
 
 const Form = () => {
@@ -17,6 +17,7 @@ const Form = () => {
   };
 
   const [todoList, setTodoList] = useState(todo);
+  console.log(todoList);
   // console.log(todo);
   // => 빈배열 12-16번째줄 들어옴
 

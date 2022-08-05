@@ -6,10 +6,10 @@ import { useSelector } from "react-redux";
 const Detail = () => {
   const navigate = useNavigate();
 
-  const todo_List = useSelector((state) => state.DetailTodo.d_list);
+  const todo_List = useSelector((state) => state.todoSlice.d_list);
   console.log(todo_List);
   const { id } = useParams();
-  const todo = todo_List.find((item) => item.id == id);
+  const todo = todo_List.find((item) => item.id === id);
   console.log(todo);
 
   return (
@@ -17,7 +17,7 @@ const Detail = () => {
       <Container>
         <Box>
           <div>
-            <Box_Header>
+            <BoxHeader>
               <div>ID:{todo.id}</div>
               <BoxButton
                 onClick={() => {
@@ -26,7 +26,7 @@ const Detail = () => {
               >
                 이전으로
               </BoxButton>
-            </Box_Header>
+            </BoxHeader>
             <DetailTitle>{todo.title}</DetailTitle>
             <DetailBody>{todo.body}</DetailBody>
           </div>
@@ -57,7 +57,7 @@ const Box = styled.div`
   justify-content: space-between;
 `;
 
-const Box_Header = styled.div`
+const BoxHeader = styled.div`
   display: flex;
   height: 80px;
   justify-content: space-between;

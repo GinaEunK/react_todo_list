@@ -4,11 +4,12 @@ import "./style.css";
 import styled from "styled-components";
 
 import { useDispatch, useSelector } from "react-redux";
-import { Navigate, useNavigate } from "react-router-dom";
-import { deleteTodo, checkTodo } from "../../redux/modules/DetailTodo";
+import { useNavigate } from "react-router-dom";
+import { deleteTodo, checkTodo } from "../../redux/modules/ToolKit";
 
 function List() {
-  const todo_List = useSelector((state) => state.DetailTodo.d_list);
+  const todo_List = useSelector((state) => state.todoSlice.d_list);
+
   //   state.DetailTodo.d_list
   //=> state.config파일에서 지정한값 or export한 파일명=>DetailTodo:DetailTodo의 DetailTodo.초기값)
   // console.log(todo_List);
@@ -17,10 +18,10 @@ function List() {
 
   return (
     <div>
-      <List_container>
+      <ListContainer>
         <h1>Working!!💪</h1>
 
-        <Todo_container>
+        <TodoContainer>
           {todo_List.map((item) => {
             if (item.isDone === false) {
               return (
@@ -61,11 +62,11 @@ function List() {
             }
             return null;
           })}
-        </Todo_container>
+        </TodoContainer>
 
         <h1>Done!!🥳</h1>
 
-        <Todo_container>
+        <TodoContainer>
           {todo_List.map((item) => {
             if (item.isDone === true) {
               return (
@@ -104,8 +105,8 @@ function List() {
             }
             return null;
           })}
-        </Todo_container>
-      </List_container>
+        </TodoContainer>
+      </ListContainer>
     </div>
   );
 }
@@ -117,10 +118,10 @@ const Detaillink = styled.div`
   cursor: pointer;
 `;
 
-const List_container = styled.div`
+const ListContainer = styled.div`
   margin: auto 50px;
 `;
-const Todo_container = styled.div`
+const TodoContainer = styled.div`
   display: flex;
   gap: 20px;
   margin-top: 24px;

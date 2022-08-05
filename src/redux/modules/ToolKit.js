@@ -26,6 +26,11 @@ const todoSlice = createSlice({
       state.d_list.push(action.payload);
     },
 
+    // state.d_list.push(action.payload);
+
+    // return (state = [...state, action.payload]);
+    // console.log(state);
+
     deleteTodo: (state, action) => {
       state.d_list = state.d_list.filter((item) => item.id !== action.payload);
     },
